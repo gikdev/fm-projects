@@ -1,5 +1,4 @@
-@font-face { font-family: Outfit; src: url("/fm-projects/fonts/Outfit/Outfit-Bold.ttf");   font-weight: 700; }
-@font-face { font-family: Outfit; src: url("/fm-projects/fonts/Outfit/Outfit-Regular.ttf"); font-weight: 400; }
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 :root {
   --white: hsl(0, 0%, 100%);
@@ -32,7 +31,7 @@ body {
   display: grid;
   place-items: center;
   background-color: var(--gray-light);
-  font-family: Outfit, sans-serif;
+  font-family: "Outfit", Outfit, sans-serif;
 }
 .card {
   background: var(--white);

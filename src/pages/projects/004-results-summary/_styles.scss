@@ -1,6 +1,4 @@
-@font-face { font-family: 'Hanken Grotesk'; font-weight: 800; src: url('/fm-projects/fonts/HankenGrotesk/HankenGrotesk-ExtraBold.ttf'); }
-@font-face { font-family: 'Hanken Grotesk'; font-weight: 700; src: url('/fm-projects/fonts/HankenGrotesk/HankenGrotesk-Bold.ttf');      }
-@font-face { font-family: 'Hanken Grotesk'; font-weight: 500; src: url('/fm-projects/fonts/HankenGrotesk/HankenGrotesk-Medium.ttf');    }
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
 
 ////////////////////////////////////
 // VARS
@@ -45,12 +43,15 @@ html, body {
 html {
   font-size: $fs-root;
   font-weight: $fw-medium;
-  font-family: 'Hanken Grotesk';
+  font-family: 'Hanken Grotesk', sans-serif;
 }
 body {
   font-size: $fs-base;
   display: grid;
   place-items: center;
+}
+button {
+  font-family: inherit;
 }
   
 ////////////////////////////////////

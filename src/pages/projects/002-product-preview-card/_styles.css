@@ -1,6 +1,4 @@
-@font-face { font-family: Montserrat; src: url('/fm-projects/fonts/Montserrat/Montserrat-Bold.ttf');      font-weight: 700; }
-@font-face { font-family: Montserrat; src: url('/fm-projects/fonts/Montserrat/Montserrat-Medium.ttf');    font-weight: 500; }
-@font-face { font-family: Fraunces;   src: url('/fm-projects/fonts/Fraunces/Fraunces_9pt_Soft-Bold.ttf'); font-weight: 700; }
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   --bg-cream: hsl(30, 38%, 92%);
@@ -32,7 +30,7 @@ body {
   place-items: center;
   padding: 1rem;
   background-color: var(--bg-cream);
-  font: 500 var(--fs-base) Montserrat, sans-serif;
+  font: 500 var(--fs-base) "Montserrat", Montserrat, sans-serif;
 }
 img {
   max-width: 100%;
@@ -58,7 +56,7 @@ img {
   display: block;
   color: var(--text);
 }
-.card__heading { font: 700 var(--fs-largest) Fraunces, serif; }
+.card__heading { font: 700 var(--fs-largest) "Fraunces", Fraunces, serif; }
 .card__description {
   color: var(--text);
   font-size: var(--fs-base);
@@ -71,7 +69,7 @@ img {
 }
 .card__price::before { content: '$'; }
 .card__price--primary {
-  font: 700 var(--fs-largest) Fraunces, serif;
+  font: 700 var(--fs-largest) "Fraunces", Fraunces, serif;
   margin-right: 1rem;
   color: var(--primary);
 }

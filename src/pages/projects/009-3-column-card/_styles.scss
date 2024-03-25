@@ -1,13 +1,4 @@
-@font-face {
-  font-weight: 400;
-  font-family: LexendDeca;
-  src: url(/fm-projects/fonts/LexendDeca/LexendDeca-Regular.ttf);
-}
-@font-face {
-  font-weight: 700;
-  font-family: BigShouldersDisplay;
-  src: url(/fm-projects/fonts/BigShouldersDisplay/BigShouldersDisplay-Bold.ttf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
 
 //--------------------------------------------------------------
 
@@ -23,8 +14,8 @@ $fz-base: 1.5rem;
 $fz-bigger: 1.8rem;
 $fz-biggest: 4rem;
 
-$ff-base: LexendDeca, sans-serif;
-$ff-heading: BigShouldersDisplay, display;
+$ff-base: "Lexend Deca", sans-serif;
+$ff-heading: "Big Shoulders Display", display;
 
 //--------------------------------------------------------------
 

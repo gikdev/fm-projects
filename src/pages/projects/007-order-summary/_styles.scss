@@ -1,6 +1,4 @@
-@font-face { font-weight: 500; font-family: RedHatDisplay; src: url('/fm-projects/fonts/RedHatDisplay/RedHatDisplay-Medium.ttf'); }
-@font-face { font-weight: 700; font-family: RedHatDisplay; src: url('/fm-projects/fonts/RedHatDisplay/RedHatDisplay-Bold.ttf');   }
-@font-face { font-weight: 900; font-family: RedHatDisplay; src: url('/fm-projects/fonts/RedHatDisplay/RedHatDisplay-Black.ttf');  }
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 
 // VARIABLES
 $fz-root: 62.5%;
@@ -24,7 +22,7 @@ html, body { height: 100% }
 html {
   font-size: $fz-root;
   font-weight: medium;
-  font-family: RedHatDisplay;
+  font-family: "Red Hat Display";
 }
 body {
   font-size: $fz-base;

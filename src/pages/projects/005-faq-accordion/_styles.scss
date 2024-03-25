@@ -1,6 +1,4 @@
-@font-face { font-family: 'WorkSans'; font-weight: 400; src: url('/fm-projects/fonts/WorkSans/WorkSans-Regular.ttf');    }
-@font-face { font-family: 'WorkSans'; font-weight: 600; src: url('/fm-projects/fonts/WorkSans/WorkSans-SemiBold.ttf'); }
-@font-face { font-family: 'WorkSans'; font-weight: 700; src: url('/fm-projects/fonts/WorkSans/WorkSans-Bold.ttf');      }
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 ////////////////////////////////////
 // VARS
@@ -27,7 +25,7 @@ html, body { height: 100% }
 html {
   font-size: $fs-root;
   font-weight: $fw-regular;
-  font-family: 'WorkSans';
+  font-family: 'Work Sans';
 }
 body {
   font-size: $fs-base;
