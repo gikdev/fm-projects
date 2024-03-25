@@ -1,0 +1,124 @@
+@font-face {
+  font-weight: 400;
+  font-family: LexendDeca;
+  src: url(/fm-projects/fonts/LexendDeca/LexendDeca-Regular.ttf);
+}
+@font-face {
+  font-weight: 700;
+  font-family: BigShouldersDisplay;
+  src: url(/fm-projects/fonts/BigShouldersDisplay/BigShouldersDisplay-Bold.ttf);
+}
+
+//--------------------------------------------------------------
+
+$orange-bright: hsl(31, 77%, 52%);
+$cyan-dark: hsl(184, 100%, 22%);
+$cyan-dark-2: hsl(179, 100%, 13%);
+
+$white-transparent: hsla(0, 0%, 100%, 0.75);
+$gray-light: hsl(0, 0%, 95%);
+
+$fz-root: 62.5%;
+$fz-base: 1.5rem;
+$fz-bigger: 1.8rem;
+$fz-biggest: 4rem;
+
+$ff-base: LexendDeca, sans-serif;
+$ff-heading: BigShouldersDisplay, display;
+
+//--------------------------------------------------------------
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  min-height: 100vh;
+}
+html {
+  font-family: $ff-base;
+  font-size: $fz-root;
+  font-weight: 400;
+}
+body {
+  background-color: $gray-light;
+  color: $white-transparent;
+  display: grid;
+  place-items: center;
+  font-size: $fz-base;
+  padding: 1rem;
+  line-height: 1.5;
+}
+img {
+  max-width: 100%;
+}
+
+//--------------------------------------------------------------
+
+.cards {
+  border-radius: 1rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 31rem);
+  grid-auto-rows: 50rem;
+}
+.card {
+  --bg: gray;
+  background-color: white;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: flex-start;
+  background: var(--bg);
+
+  &--sedans {
+    --bg: #{$orange-bright};
+  }
+  &--suvs {
+    --bg: #{$cyan-dark};
+  }
+  &--luxury {
+    --bg: #{$cyan-dark-2};
+  }
+  &__icon {
+    width: 7rem;
+  }
+  &__title {
+    font-family: $ff-heading;
+    text-transform: uppercase;
+    font-size: $fz-biggest;
+  }
+  &__description {
+    color: $white-transparent;
+  }
+  &__link {
+    margin-top: auto;
+    color: var(--bg);
+    text-decoration: none;
+    background: white;
+    padding: 1rem 3.5rem;
+    border-radius: 12rem;
+    border: 0.2rem solid transparent;
+    transition: all 200ms;
+
+    &:hover {
+      background: transparent;
+      color: $white-transparent;
+      border-color: white;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 60em) {
+  .cards { 
+    grid-template-columns: repeat(1, 30rem); 
+    margin: 2rem auto;
+    grid-auto-rows: min-content;
+  }
+}

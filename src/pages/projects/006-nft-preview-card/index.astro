@@ -1,0 +1,34 @@
+---
+import "./_styles.scss"
+import Base from '../../../layouts/Base.astro'
+---
+
+<Base title="NFT Preview Card">
+  <div class="card">
+    <div class="card__image-container">
+      <img src="/fm-projects/img/image-equilibrium.jpg" alt="An Equilibrium" class="card__image">
+      <div class="card__image-hover">
+        <img src="/fm-projects/img/icon-view.svg" alt="icon">
+      </div>
+    </div>
+    <div class="card__content">
+      <h2 class="card__title">Equilibrium #3429</h2>
+      <p class="card__description">Our Equilibrium collection promotes balance and calm.</p>
+      <div class="card__info">
+        <div class="card__price">
+          <img src="/fm-projects/img/icon-ethereum.svg" alt="icon" class="icon">
+          <span>0.041 ETH</span>
+        </div>
+        <div class="card__time">
+          <img src="/fm-projects/img/icon-clock.svg" alt="icon" class="icon">
+          <span>3 days left</span>
+        </div>
+      </div>
+      <hr>
+      <div class="card__person">
+        <img src="/fm-projects/img/image-avatar-nft.png"alt='Jules Wyvern Avatar' class="card__avatar">
+        <p class="card__person-name">Creation of <a href="#" class="link">Jules Wyvern</a></p>
+      </div>
+    </div>
+  </div>
+</Base>

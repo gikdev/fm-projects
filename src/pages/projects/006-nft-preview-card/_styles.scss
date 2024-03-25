@@ -1,0 +1,149 @@
+@font-face { font-family: 'Outfit'; font-weight: 300; src: url('/fm-projects/fonts/Outfit/Outfit-Light.ttf');      }
+@font-face { font-family: 'Outfit'; font-weight: 400; src: url('/fm-projects/fonts/Outfit/Outfit-Regular.ttf');    }
+@font-face { font-family: 'Outfit'; font-weight: 600; src: url('/fm-projects/fonts/Outfit/Outfit-SemiBold.ttf'); }
+
+/////////////////////////////////// VARS
+
+// Primary Colors
+$c-blue-soft: hsl(215, 51%, 70%);
+$c-cyan: hsl(178, 100%, 50%);
+$c-cyan-transparent: hsla(178, 100%, 50%, 0.5);
+
+// Neutral Colors
+$c-white: hsl(0, 0%, 100%);
+$c-black: hsl(0, 0%, 0%);
+$c-main-bg: hsl(217, 54%, 11%);
+$c-card-bg: hsl(216, 50%, 16%);
+$c-line: hsl(215, 32%, 27%);
+
+// Fonts
+$fs-root: 62.5%;
+$fs-base: 1.6rem;
+$fs-small: 1.3rem;
+$fs-big: 2.2rem;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-semibold: 600;
+
+/////////////////////////////////// BASE
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html, body { height: 100% }
+html {
+  font-size: $fs-root;
+  font-weight: $fw-regular;
+  font-family: 'Outfit';
+}
+body {
+  font-size: $fs-base;
+  background-color: $c-main-bg;
+  display: grid;
+  color: $c-white;
+  place-items: center;
+  line-height: 1.5;
+  padding: 0.5rem;
+  letter-spacing: 0.5px;
+}
+img {
+  max-width: 100%;
+}
+
+/////////////////////////////////// CARD
+.card {
+  max-width: 32rem;
+  background-color: $c-card-bg;
+  padding: 2rem;
+  border-radius: 2rem;
+
+  &__image-container {
+    position: relative;
+    height: 28rem;
+    width: 28rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  &__image-container:hover &__image-hover {
+    opacity: 1;
+  }
+  &__image {
+    position: absolute;
+    z-index: 2;
+  }
+  &__image-hover {
+    position: absolute;
+    transition: all 200ms;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    opacity: 0;
+    z-index: 5;
+    place-items: center;
+    background: $c-cyan-transparent;
+  }
+  &__title {
+    font-size: $fs-big;
+    font-weight: $fw-semibold;
+    margin-bottom: 1rem;
+  }
+  &__description {
+    font-weight: $fw-light;
+    color: $c-blue-soft;
+    margin-bottom: 1rem;
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__price, &__time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.6rem;
+  }
+  &__price {
+    font-weight: $fw-regular;
+    color: $c-cyan;
+  }
+  &__time {
+    color: $c-blue-soft;
+  }
+  &__person {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  &__avatar {
+    width: 3rem;
+    border: 1px solid $c-white;
+    border-radius: 120rem;
+  }
+  &__person-name {
+    color: $c-blue-soft;
+  }
+  hr {
+    margin: 2rem 0;
+    height: 1px;
+    border: none;
+    background: $c-line;
+  }
+  .link {
+    &, &:link, &:visited {
+      color: $c-white;
+    }
+  }
+  &__title, .link {
+    transition: all 200ms;
+    cursor: pointer;
+
+    &:hover {
+      color: $c-cyan;
+    }
+  }
+}

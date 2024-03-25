@@ -1,0 +1,31 @@
+---
+import "./_styles.css"
+import Base from '../../../layouts/Base.astro'
+---
+
+<Base title="Product Preview Card">
+  <div class="card">
+    <div class="card__half card__half--left">
+      <picture class="card__img">
+        <source srcset="/fm-projects/img/image-product-mobile.jpg" media="(max-width: 610px)">
+        <source srcset="/fm-projects/img/image-product-desktop.jpg" media="(min-width: 611px)">
+        <img src="/fm-projects/img/image-product-mobile.jpg" alt="">
+      </picture>
+    </div>
+    <div class="card__half card__half--right">
+      <span class="card__category">Perfume</span>
+      <h2 class="card__heading">Gabrielle Essence Eau De Parfum</h2>
+      <p class="card__description">
+        A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.
+      </p>
+      <div class="card__prices">
+        <span class="card__price card__price--primary">149.99</span>
+        <span class="card__price card__price--deleted">169.99</span>  
+      </div>
+      <button class="card__btn btn">
+        <img class="btn__icon" src="/fm-projects/img/icon-cart.svg" alt="Cart Icon">
+        <span class="btn__text">Add to Cart</span>
+      </button>
+    </div>
+  </div>
+</Base>

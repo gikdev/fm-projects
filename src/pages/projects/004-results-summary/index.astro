@@ -1,0 +1,50 @@
+---
+import "./_styles.scss"
+import Base from '../../../layouts/Base.astro'
+---
+
+<Base title="Results summary">
+  <div class="card">
+    <div class="card__result">
+      <h2 class="title title--light">Your Result</h2>
+      <div class="circle__container">
+        <div class="circle">
+          <span class="circle__number-score">76</span>
+          <span class="circle__total">of 100</span>
+        </div>
+      </div>
+      <p class="card__text-score">Great</p>
+      <p class="card__description">You scored higher than 65% of the people who have taken these tests.</p>
+    </div>
+    <div class="card__summary">
+      <h2 class="title">Summary</h2>
+      <div class="card__summaries">
+        <div class="summary summary--red">
+          <img  class="summary__icon" src="/fm-projects/img/icon-reaction.svg" alt="">
+          <span class="summary__name">Reaction</span>
+          <span class="summary__score">80</span>
+          <span class="summary__total">/ 100</span>
+        </div>
+        <div class="summary summary--yellow">
+          <img  class="summary__icon" src="/fm-projects/img/icon-memory.svg" alt="">
+          <span class="summary__name">Memory</span>
+          <span class="summary__score">92</span>
+          <span class="summary__total">/ 100</span>
+        </div>
+        <div class="summary summary--green">
+          <img  class="summary__icon" src="/fm-projects/img/icon-verbal.svg" alt="">
+          <span class="summary__name">Verbal</span>
+          <span class="summary__score">61</span>
+          <span class="summary__total">/ 100</span>
+        </div>
+        <div class="summary summary--blue">
+          <img  class="summary__icon" src="/fm-projects/img/icon-visual.svg" alt="">
+          <span class="summary__name">Visual</span>
+          <span class="summary__score">72</span>
+          <span class="summary__total">/ 100</span>
+        </div>
+      </div>
+      <button class="btn">Continue</button>
+    </div>
+  </div>
+</Base>

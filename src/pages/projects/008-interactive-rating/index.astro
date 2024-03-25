@@ -1,0 +1,55 @@
+---
+import Base from "../../../layouts/Base.astro"
+import './_styles.scss'
+---
+
+<Base title="Interactive Rating">
+
+  <div class="card card--rating">
+    <div class="card__icon-container">
+      <img src="/fm-projects/img/icon-star-2.svg" alt="star icon" class="card__icon" />
+    </div>
+    <h1 class="card__title">How did we do?</h1>
+    <p class="card__description">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+    <form class="card__form" id="rating-form">
+      <div class="card__ratings">
+        <input class="card__radio" type="radio" name="rating" value="1" id="rating-1" />
+        <label class="card__rating" for="rating-1">1</label>
+        <input class="card__radio" type="radio" name="rating" value="2" id="rating-2" />
+        <label class="card__rating" for="rating-2">2</label>
+        <input class="card__radio" type="radio" name="rating" value="3" id="rating-3" />
+        <label class="card__rating" for="rating-3">3</label>
+        <input class="card__radio" type="radio" name="rating" value="4" id="rating-4" />
+        <label class="card__rating" for="rating-4">4</label>
+        <input class="card__radio" type="radio" name="rating" value="5" id="rating-5" />
+        <label class="card__rating" for="rating-5">5</label>
+      </div>
+      <input class="card__submit" type="submit" value="submit" name="submit" />
+    </form>
+  </div>
+
+  <div class="card card--thanks">
+      <img src="/fm-projects/img/illustration-thank-you.svg" alt="Thank you image" class="card__image" />
+      <p class="card__shows-rating">You selected <span id="rating-number">2</span> out of 5</p>
+      <h1 class="card__title">Thank you!</h1>
+      <p class="card__description">We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
+  </div>
+</Base>
+
+<script defer>
+  const form = document.querySelector('.card__form')
+  const ratingCard = document.querySelector('.card--rating')
+  const thanksCard = document.querySelector('.card--thanks')
+  const ratingNumberHolder = document.querySelector('#rating-number')
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+
+    const radios = Array.from(e.target.rating)
+    const selected = radios.find(r => r.checked).value
+    
+    ratingNumberHolder.innerText = selected
+    ratingCard.style.display = 'none'
+    thanksCard.style.display = 'block'
+  })
+</script>

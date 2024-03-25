@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+//---------------------------------
+
+$ff-base: "Manrope", sans-serif;
+$fz-root: 62.5%;
+$fz-base: 1.3rem;
+$fw-base: 500;
+
+$blue-grayish-dark-2: hsl(217, 19%, 35%);
+$blue-desaturated-dark: hsl(214, 17%, 51%);
+$blue-grayish: hsl(212, 23%, 69%);
+$blue-grayish-light: hsl(210, 46%, 95%);
+
+//---------------------------------
+
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html, body { 
+  min-height: 100vh; 
+  overflow: hidden;
+}
+html {
+  font-family: $ff-base;
+  font-size: $fz-root;
+  font-weight: $fw-base;
+}
+body {
+  display: grid;
+  place-items: center;
+  font-size: $fz-base;
+  padding: 1rem;
+  line-height: 1.5;
+  background-color: $blue-grayish-light;
+}
+img { max-width: 100%; }
+.hidden { display: none !important; }
+
+//---------------------------------
+
+.card {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  max-width: 32rem;
+  overflow: hidden;
+  border-radius: 1rem;
+
+  // &__header {}
+  &__img {
+    aspect-ratio: 5 / 3;
+  }
+  &__main {
+    padding: 3rem 2.5rem 2rem 2.5rem;
+  }
+  // &__footer {}
+  // &__btn {}
+}
+.heading { 
+  &--1 {
+    font-size: 1.3em;
+    margin-bottom: 1rem;
+    color: $blue-grayish-dark-2;
+  }
+}
+.paragraph {
+  color: $blue-desaturated-dark;
+  letter-spacing: 0.5px;
+}
+.footy {
+  padding: 2rem 3rem;
+  display: grid;
+  height: 8rem;
+
+  &--user {
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "img name btn" "img date btn";
+  }
+  &--share {
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr;
+    background: $blue-grayish-dark-2;
+    color: $blue-grayish;
+    grid-template-areas: "wrapper btn";
+  }
+  &__wrapper {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    grid-area: "wrapper";
+  }
+  &__img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 123rem;
+    grid-area: img;
+    align-self: center;
+    justify-self: start;
+  } 
+  &__name {
+    grid-area: name;
+    color: $blue-grayish-dark-2;
+    font-weight: bold;
+  } 
+  &__date {
+    color: $blue-desaturated-dark;
+    grid-area: date;
+  } 
+  &__btn {
+    align-self: center;
+    justify-self: end;
+  }
+  &__text {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+  }
+  &__icon {
+    cursor: pointer;
+  }
+}
+.btn { 
+  cursor: pointer;
+  
+  &--icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 10rem;
+    border: none;
+    grid-area: btn;
+  }
+  &--dark {
+    background: $blue-desaturated-dark;
+  }
+  &--light {
+    background: $blue-grayish-light;
+  }
+}

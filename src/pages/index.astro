@@ -1,0 +1,31 @@
+---
+import "../styles/index.scss";
+import Base from "../layouts/Base.astro";
+import ProjectListItem from "../components/ProjectListItem.astro";
+
+const PLI = ProjectListItem;
+const title = "My Projects";
+---
+
+<Base title={title}>
+  <main class="container-fluid">
+    <article>
+      <h1>{title}</h1>
+      <hr />
+      <br />
+      <ul class="items">
+        <PLI text="Blog preview card" project="001-blog-preview-card" />
+        <PLI text="Product preview card" project="002-product-preview-card" />
+        <PLI text="QR Code card" project="003-qr-code-card" />
+        <PLI text="Results Summary" project="004-results-summary" />
+        <PLI text="FAQ Accordion" project="005-faq-accordion" />
+        <PLI text="NFT Preview Card" project="006-nft-preview-card" />
+        <PLI text="Order Summary" project="007-order-summary" />
+        <PLI text="Interactive Rating" project="008-interactive-rating" />
+        <PLI text="3 Column Card" project="009-3-column-card" />
+        <PLI text="Profile Card" project="010-profile-card" />
+        <PLI text="Article Preview" project="011-article-preview" />
+      </ul>
+    </article>
+  </main>
+</Base>

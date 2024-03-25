@@ -1,0 +1,8 @@
+---
+const { text, project } = Astro.props
+
+const href = `./projects/${project}/`
+---
+<li class="item">
+  <a class="item__link" href={href} class="secondary" target="_blank">{text}</a>
+</li>

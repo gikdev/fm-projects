@@ -1,0 +1,81 @@
+---
+import Base from "../../../layouts/Base.astro"
+import './_styles.scss'
+---
+
+<Base title="Article Preview">
+  <div class="card">
+    <header class="card__header">
+      <img 
+        src="/fm-projects/img/011-drawers.jpg" 
+        alt="A beautiful decoration" 
+        class="card__img" 
+      />
+    </header>
+    <main class="card__main">
+      <h1 class="heading heading--1">Shift the overall look and feel by adding these wonderful touches to furniture in your home</h1>
+      <p class="paragraph">Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I've got some simple tips to help you make any room feel complete.</p>
+    </main>
+    <footer class="card__footer">
+      <div class="footy footy--user">
+        <img 
+          class="footy__img" 
+          src="/fm-projects/img/011-avatar-michelle.jpg" 
+          alt="Michelle Smith Profile Image" 
+        />
+        <p class="footy__name">Michelle Appleton</p>
+        <p class="footy__date">28 Jun 2020</p>
+        <button class="btn footy__btn btn--icon btn--light" id="open-share">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13"><path fill="hsl(214, 17%, 51%)" d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/></svg>
+        </button>
+      </div>
+      <div class="footy footy--share">
+        <div class="footy__wrapper">
+          <p class="footy__text">share</p>
+          <img class="footy__icon" src="/fm-projects/img/011-icon-facebook.svg" alt="">
+          <img class="footy__icon" src="/fm-projects/img/011-icon-twitter.svg" alt="">
+          <img class="footy__icon" src="/fm-projects/img/011-icon-pinterest.svg" alt="">
+        </div>
+        <button class="btn footy__btn btn--icon btn--dark" id="close-share">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13"><path fill="hsl(210, 46%, 95%)" d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/></svg>
+        </button>
+      </div>
+    </footer>
+  </div>
+</Base>
+
+<script>
+  // @ts-nocheck
+  class Toggler {
+    constructor(params) {
+      const $ = q => document.querySelector(q)
+      
+      this.openBtn = $(params.openBtn)
+      this.closeBtn = $(params.closeBtn)
+      this.openComponent = $(params.openComponent)
+      this.closeComponent = $(params.closeComponent)
+      
+      this.closeComponent.style.display = 'none'
+      
+      this.openBtn.addEventListener('click', this.open)
+      this.closeBtn.addEventListener('click', this.close)
+    }
+    open = () => {
+      this.closeComponent.style.display = 'grid'
+      this.openComponent.style.display = 'none'
+    }
+    close = () => {
+      this.closeComponent.style.display = 'none'
+      this.openComponent.style.display = 'grid'
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const shareToggler = new Toggler({
+      openBtn: '#open-share',
+      closeBtn: '#close-share',
+      openComponent: '.footy--user',
+      closeComponent: '.footy--share',
+    })
+  })
+</script>

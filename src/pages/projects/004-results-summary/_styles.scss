@@ -1,0 +1,198 @@
+@font-face { font-family: 'Hanken Grotesk'; font-weight: 800; src: url('/fm-projects/fonts/HankenGrotesk/HankenGrotesk-ExtraBold.ttf'); }
+@font-face { font-family: 'Hanken Grotesk'; font-weight: 700; src: url('/fm-projects/fonts/HankenGrotesk/HankenGrotesk-Bold.ttf');      }
+@font-face { font-family: 'Hanken Grotesk'; font-weight: 500; src: url('/fm-projects/fonts/HankenGrotesk/HankenGrotesk-Medium.ttf');    }
+
+////////////////////////////////////
+// VARS
+$color-red-light: hsl(0, 100%, 67%);
+$color-yellow-orangey: hsl(39, 100%, 56%);
+$color-teal-green: hsl(166, 100%, 37%);
+$color-cobalt-blue: hsl(234, 85%, 45%);
+
+$color-slate-blue-light: hsl(252, 100%, 67%);
+$color-royal-blue-light: hsl(241, 81%, 54%);
+$color-blue-violet: hsla(256, 72%, 46%, 1);
+$color-blue-persian: hsla(241, 72%, 46%, 0);
+
+$gradient-bg: linear-gradient(to bottom, $color-slate-blue-light, $color-royal-blue-light);
+$gradient-circle: linear-gradient(to bottom, $color-blue-violet, $color-blue-persian);
+
+$neutral-white: hsl(0, 0%, 100%);
+$neutral-blue-pale: hsl(221, 100%, 96%);
+$neutral-lavender-light: hsl(241, 100%, 89%);
+$neutral-blue-gray-dark: hsl(224, 30%, 27%);
+$neutral-black: hsl(0, 0%, 0%);
+
+$fs-base: 1.5rem;
+$fs-root: 62.5%;
+$fw-extrabold: 800;
+$fw-bold: 700;
+$fw-medium: 500;
+
+////////////////////////////////////
+// BASE
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  // outline: 1px dashed red;
+}
+html, body {
+  height: 100%;
+  background-color: $neutral-white;
+  color: $neutral-black;
+}
+html {
+  font-size: $fs-root;
+  font-weight: $fw-medium;
+  font-family: 'Hanken Grotesk';
+}
+body {
+  font-size: $fs-base;
+  display: grid;
+  place-items: center;
+}
+  
+////////////////////////////////////
+// CARD
+.card {
+  max-width: 55rem;
+  display: flex;
+  border-radius: 2rem;
+  box-shadow: 2rem 2rem 4rem 0 $neutral-blue-pale;
+  
+  &__description {
+    color: $neutral-lavender-light;
+    padding: 1rem 0;
+  }
+  &__result {
+    padding: 2.5rem 3rem;
+    background: $gradient-bg;
+    text-align: center;
+    border-radius: 2rem;
+    flex: 1;
+    color: $neutral-white;
+  }
+  &__summary {
+    padding: 2.5rem 3rem;
+    flex: 1;
+    color: $neutral-black;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: start;
+  }
+  &__text-score {
+    font-size: 180%;
+    font-weight: $fw-bold;
+  }
+  &__summaries {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.2rem;
+    justify-content: space-between;
+    margin-bottom: auto;
+  }
+}
+.circle {
+  $size: 15rem;
+  width: $size;
+  height: $size;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: $gradient-circle;
+  border-radius: 120rem;
+  margin-bottom: 2rem;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__number-score {
+    font-size: 350%;
+    font-weight: $fw-extrabold;
+  }
+  &__total {
+    color: $neutral-lavender-light;
+    font-size: 90%;
+  }
+}
+.summary {
+  padding: 1.5rem 1rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-weight: $fw-bold;
+
+  &--red {
+    color: $color-red-light;
+    background: rgba($color-red-light, 0.05);
+  }
+  &--yellow {
+    color: $color-yellow-orangey;
+    background: rgba($color-yellow-orangey, 0.05);
+  }
+  &--green {
+    color: $color-teal-green;
+    background: rgba($color-teal-green, 0.05);
+  }
+  &--blue {
+    color: $color-cobalt-blue;
+    background: rgba($color-cobalt-blue, 0.05);
+  }
+  &__icon {
+    width: 1.5rem;
+  }
+  &__name {
+    margin-right: auto;
+    color: currentColor;
+  }
+  &__score {
+    color: $neutral-blue-gray-dark;
+  }
+  &__total {
+    color: $neutral-blue-gray-dark;
+    opacity: 0.6;
+  }
+}
+.title  {
+  margin-bottom: 2rem;
+
+  &--light { color: $neutral-lavender-light; }
+}
+.btn {
+  color: $neutral-white;
+  background-image: linear-gradient(to bottom, $neutral-blue-gray-dark, $neutral-blue-gray-dark);
+  padding: 1.5rem 0;
+  text-align: center;
+  border-radius: 23rem;
+  border: none;
+  margin-top: 3rem;
+  cursor: pointer;
+  transition: all 200ms;
+
+  &:hover {
+    background-image: $gradient-bg;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    font-size: $fs-base;
+    display: block;
+  }
+  .card {
+    flex-direction: column;
+
+    &__result {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+---
+import "./_styles.css"
+import Base from '../../../layouts/Base.astro'
+---
+
+<Base title="Blog Preview Card">
+  <div class="card">
+    <div class="card__header">
+      <img class="card__img" src="/fm-projects/img/illustration-article.svg" alt="Something..." />
+    </div>
+    <div class="card__main">
+      <span class="card__tag">Learning</span>
+      <p class="card__date">Published 21 Dec 2023</p>
+      <h2 class="card__heading">HTML & CSS foundations</h2>
+      <p class="card__description">These languages are the backbone of every website, defining structure, content, and presentation.</p>
+    </div>
+    <div class="card__footer">
+      <div class="avatar">
+        <img src="/fm-projects/img/image-avatar.webp" alt="Greg Hooper Image" class="avatar__img">
+        <span class="avatar__name">Greg Hooper</span>
+      </div>
+    </div>
+  </div>
+</Base>

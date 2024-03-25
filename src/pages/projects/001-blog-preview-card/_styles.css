@@ -1,0 +1,104 @@
+@font-face {
+  font-family: Figtree;
+  src: url('/fm-projects/fonts/Figtree/Figtree-ExtraBold.ttf');
+  font-weight: 800;
+}
+@font-face {
+  font-family: Figtree;
+  src: url('/fm-projects/fonts/Figtree/Figtree-SemiBold.ttf');
+  font-weight: 600;
+}
+:root {
+  --primary: hsl(47, 88%, 63%);
+  --neutral-white: hsl(0, 0%, 100%);
+  --neutral-gray: hsl(0, 0%, 30%);
+  --neutral-black: hsl(0, 0%, 7%);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html, body {
+  background: var(--primary);
+  color: var(--neutral-white);
+  font-family: Figtree;
+  font-weight: 600;
+  height: 100%;
+}
+html {
+  font-size: 50%;
+}
+body {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;
+  padding: 0.5rem;
+}
+
+.card {
+  background-color: var(--neutral-white);
+  color: var(--neutral-black);
+  padding: 2rem;
+  border: 1px solid var(--neutral-black);
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-shadow: 1rem 1rem 0 0 var(--neutral-black);
+  transition: all 200ms;
+  cursor: pointer;
+  position: relative;
+  width: 34.5rem;
+}
+.card:hover {
+  transform: translate(-0.5rem, -0.5rem);
+  box-shadow: 1.5rem 1.5rem 0 0 var(--neutral-black);
+}
+/* .card__header {} */
+.card__img {
+  border-radius: 1rem;
+  width: 30rem;
+}
+/* .card__main {} */
+.card__tag {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary);
+  font-weight: 800;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 0.9em;
+}
+.card__date {
+  margin-bottom: 2rem;
+  font-size: 0.9em;
+}
+.card__heading {
+  margin-bottom: 2rem;
+}
+.card__heading:hover {
+  color: var(--primary);
+}
+.card__description {
+  color: var(--neutral-gray);
+  max-width: 100%;
+}
+/* .card__footer {} */
+.avatar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.avatar__img {
+  width: 4rem;
+}
+.avatar__name {
+  font-weight: 800;
+}
+
+@media (min-width: 600px) {
+  html { font-size: 62.5%; }
+}

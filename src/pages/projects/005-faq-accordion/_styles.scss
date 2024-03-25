@@ -1,0 +1,104 @@
+@font-face { font-family: 'WorkSans'; font-weight: 400; src: url('/fm-projects/fonts/WorkSans/WorkSans-Regular.ttf');    }
+@font-face { font-family: 'WorkSans'; font-weight: 600; src: url('/fm-projects/fonts/WorkSans/WorkSans-SemiBold.ttf'); }
+@font-face { font-family: 'WorkSans'; font-weight: 700; src: url('/fm-projects/fonts/WorkSans/WorkSans-Bold.ttf');      }
+
+////////////////////////////////////
+// VARS
+$color-white: hsl(0, 0%, 100%);
+$color-primary: hsl(281, 83%, 54%);
+$color-light-pink: hsl(275, 100%, 97%);
+$color-purple-grayish: hsl(292, 16%, 49%);
+$color-purple-dark: hsl(292, 42%, 14%);
+$fs-base: 1.6rem;
+$fs-root: 62.5%;
+$fw-regular: 400;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+////////////////////////////////////
+// BASE
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  // outline: 1px dashed red;
+}
+html, body { height: 100% }
+html {
+  font-size: $fs-root;
+  font-weight: $fw-regular;
+  font-family: 'WorkSans';
+}
+body {
+  font-size: $fs-base;
+  background-color: $color-light-pink;
+  background-image: url(/fm-projects/img/background-pattern-desktop.svg);
+  background-repeat: repeat-x;
+  display: grid;
+  place-items: center;
+  line-height: 1.5;
+  padding: 2rem;
+}
+
+
+////////////////////////////////////
+// CARD
+.card {
+  max-width: 70rem;
+  border-radius: 2rem;
+  background: $color-white;
+  padding: 4rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: $color-purple-dark;
+  
+  &__title {
+    font-weight: $fw-bold;
+    display: flex;
+    align-items: center;
+    font-size: 5.6rem;
+    gap: 2rem;
+  }
+  // &__faqs {}
+  // &__icon {}
+}
+
+
+
+////////////////////////////////////
+// FAQ
+.faq {
+  padding: 2rem 0;
+  
+  &:not(:last-child) { border-bottom: 1px solid $color-light-pink; }
+  &__question {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    &:hover .faq__title { color: $color-primary; }
+  }
+  &__title { transition: all 200ms; }
+  &__answer {
+    margin-top: 2rem;
+    color: $color-purple-grayish;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  body { 
+    background-image: url(/fm-projects/img/background-pattern-mobile.svg); 
+  }
+  .card { 
+    padding: 2.5rem;
+    border-radius: 1rem;
+
+    &__title {
+      font-size: 4rem;
+    }
+  }
+  .faq__title { font-size: 1.8rem; }
+}

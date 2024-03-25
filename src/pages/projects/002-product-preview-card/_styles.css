@@ -1,0 +1,109 @@
+@font-face { font-family: Montserrat; src: url('/fm-projects/fonts/Montserrat/Montserrat-Bold.ttf');      font-weight: 700; }
+@font-face { font-family: Montserrat; src: url('/fm-projects/fonts/Montserrat/Montserrat-Medium.ttf');    font-weight: 500; }
+@font-face { font-family: Fraunces;   src: url('/fm-projects/fonts/Fraunces/Fraunces_9pt_Soft-Bold.ttf'); font-weight: 700; }
+
+:root {
+  --bg-cream: hsl(30, 38%, 92%);
+  --bg-white: hsl(0, 0%, 100%);
+  --bold-text: hsl(212, 21%, 14%);
+  --primary: hsl(158, 36%, 37%);
+  --primary-dark: hsl(156, 42%, 18%);
+  --text: hsl(228, 12%, 48%);
+
+  --fs-base: 1.4rem;
+  --fs-larger: 2rem;
+  --fs-largest: 3.2rem;
+}
+*, *::before, *::after { 
+  font-family: inherit;
+  box-sizing: inherit; 
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body { min-height: 100vh; }
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+body {
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background-color: var(--bg-cream);
+  font: 500 var(--fs-base) Montserrat, sans-serif;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+.card {
+  background-color: var(--bg-white);
+  display: flex;
+  border-radius: 2rem;
+  overflow: hidden;
+  width: 60rem;
+}
+.card__half { flex: 1 1 50%; } 
+.card__half--right {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card__category {
+  text-transform: uppercase;
+  letter-spacing: 0.7rem;
+  display: block;
+  color: var(--text);
+}
+.card__heading { font: 700 var(--fs-largest) Fraunces, serif; }
+.card__description {
+  color: var(--text);
+  font-size: var(--fs-base);
+  line-height: 1.4;
+}
+.card__prices {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.card__price::before { content: '$'; }
+.card__price--primary {
+  font: 700 var(--fs-largest) Fraunces, serif;
+  margin-right: 1rem;
+  color: var(--primary);
+}
+.card__price--deleted {
+  text-decoration: line-through;
+  color: var(--text);
+}
+.card__btn, .btn {
+  display: flex;
+  border-radius: 1rem;
+  background: var(--primary);
+  color: var(--bg-white);
+  border: none;
+  width: 100%;
+  padding: 1.7rem 0;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+.btn:hover { background-color: var(--primary-dark); }
+.btn__icon { display: inline-block; }
+.btn__text { display: inline-block; }
+
+@media only screen and (max-width: 610px) {
+  .card {
+    flex-direction: column;
+    max-width: 40rem;
+    min-width: 30rem;
+    width: 100%;
+  }
+  .card__half--right {
+    gap: 1.5rem;
+  }
+}
