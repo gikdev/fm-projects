@@ -56,7 +56,9 @@ img { max-width: 100%; }
   &__main {
     padding: 3rem 2.5rem 2rem 2.5rem;
   }
-  // &__footer {}
+  &__footer {
+    position: relative;
+  }
   // &__btn {}
 }
 .heading { 
@@ -74,24 +76,27 @@ img { max-width: 100%; }
   padding: 2rem 3rem;
   display: grid;
   height: 8rem;
-
+  
   &--user {
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas: "img name btn" "img date btn";
   }
   &--share {
-    grid-template-columns: 4fr 1fr;
-    grid-template-rows: 1fr;
-    background: $blue-grayish-dark-2;
-    color: $blue-grayish;
-    grid-template-areas: "wrapper btn";
-  }
-  &__wrapper {
-    display: flex;
     gap: 2rem;
     align-items: center;
-    grid-area: "wrapper";
+    background: $blue-grayish-dark-2;
+    color: $blue-grayish;
+    position: absolute;
+    display: none;
+
+    &.active {
+      display: flex;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
   }
   &__img {
     width: 4rem;
@@ -113,6 +118,8 @@ img { max-width: 100%; }
   &__btn {
     align-self: center;
     justify-self: end;
+    position: relative;
+    z-index: 100;
   }
   &__text {
     letter-spacing: 5px;
@@ -124,6 +131,8 @@ img { max-width: 100%; }
 }
 .btn { 
   cursor: pointer;
+  background: $blue-grayish-light;
+  svg { fill: hsl(214, 17%, 51%); }
   
   &--icon {
     width: 3rem;
@@ -132,10 +141,94 @@ img { max-width: 100%; }
     border: none;
     grid-area: btn;
   }
-  &--dark {
+  &--active {
     background: $blue-desaturated-dark;
+    svg { fill: hsl(210, 46%, 95%); }
   }
-  &--light {
-    background: $blue-grayish-light;
+}
+
+@media screen and (min-width: 25em) {
+  .card {
+    $pic-size: 25rem;
+    background: white;
+    display: grid;
+    grid-template-columns: $pic-size 1fr;
+    grid-template-rows: min-content min-content;
+    grid-template-areas: "header main" "header footer";
+    width: 75rem;
+    // max-width: 75rem;
+    // max-height: $pic-size;
+    overflow: hidden;
+    border-radius: 1rem;
+  
+    &__img {
+      object-fit: fill;
+      height: 100%;
+      width: 100%;
+    }
+    &__header {
+      grid-area: header;
+    }
+    &__main {
+      grid-area: main;
+      padding: 3rem 2.5rem 2rem 2.5rem;
+    }
+    &__footer {
+      grid-area: footer;
+    }
+  }
+  .footy {
+    &--user {
+      padding: 2rem 3rem;
+      display: grid;
+      height: 8rem;
+      grid-template-columns: 1fr 3fr 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas: "img name btn" "img date btn";
+    }
+    &--share {
+      align-items: center;
+      background: $blue-grayish-dark-2;
+      color: $blue-grayish;
+      display: none;
+      gap: 2rem;
+      padding: 1rem 2rem;
+      position: absolute;
+      width: 30rem;
+      
+      &.active {
+        display: inline-flex;
+        top: -7rem;
+        right: 1rem;
+      }
+    }
+    &__img {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 123rem;
+      grid-area: img;
+      align-self: center;
+      justify-self: start;
+    } 
+    &__name {
+      grid-area: name;
+      color: $blue-grayish-dark-2;
+      font-weight: bold;
+    } 
+    &__date {
+      color: $blue-desaturated-dark;
+      grid-area: date;
+    } 
+    &__btn {
+      align-self: center;
+      justify-self: end;
+    }
+    &__text {
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+    &__icon {
+      cursor: pointer;
+    }
   }
 }
