@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+  --fz-base: 1.4rem;
+  --fz-root: 62.5%;
+  --clr-green: hsl(75, 94%, 57%);
+  --clr-gray: hsl(0, 0%, 20%);
+  --clr-gray-dark: hsl(0, 0%, 12%);
+  --clr-black: hsl(0, 0%, 8%);
+  --clr-white: hsl(0, 0%, 100%);
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+}
+
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body { 
+  background-color: var(--clr-black);
+  min-height: 100vh;
+}
+
+html { font-size: var(--fz-root); }
+
+body {
+  font-family: Inter, sans-serif;
+  display: grid;
+  place-items: center;
+  font-size: var(--fz-base);
+  color: var(--clr-white);
+}
+
+.card {
+  background-color: var(--clr-gray-dark);
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 3rem;
+
+  &__image {
+    border-radius: 123rem;
+    --size: 10rem;
+    width: var(--size);
+    height: var(--size);
+    margin-bottom: 4rem;
+  }
+  &__title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+  &__location {
+    margin-bottom: 3.5rem;
+    font-weight: var(--fw-medium);
+    color: var(--clr-green);
+  }
+  &__description { margin-bottom: 2.5rem; }
+  &__link {
+    display: block;
+    color: var(--clr-white);
+    text-align: center;
+    padding: 1.5rem 0;
+    background-color: var(--clr-gray);
+    font-weight: var(--fw-medium);
+    border-radius: 0.75rem;
+    text-decoration: none;
+    align-self: stretch;
+    transition: background 200ms, color 200ms;
+
+    &:not(&:last-of-type) {
+      margin-bottom: 1.5rem;
+    }
+    &:hover {
+      background: var(--clr-green);
+      color: var(--clr-gray-dark);
+    }
+  }
+}
+
+@media screen and (min-width: 85em) {
+  .card {
+    padding: 3rem 4rem;
+    max-width: 40rem;
+    width: 100%;
+  }
+}
